@@ -1,0 +1,241 @@
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 100px;
+    background-color: rgb(206, 206, 140);
+}
+
+/*======menu====== */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 10px 20px;
+}
+
+.nav .logo h1 {
+    font-weight: 600;
+    font-family: sans-serif;
+    color: black;
+}
+
+.nav .logo b {
+    color: red;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav ul li {
+    margin-right: 40px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+}
+
+/* ====== active ====== */
+.auth-buttons {
+    margin-left: auto; /* Push buttons to the right */
+    display: flex;
+    gap: 10px; /* Adds spacing between buttons */
+}
+
+.auth-buttons button {
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.nav ul .active::after {
+    content: '';
+    width: 50%;
+    height: 3px;
+    background-color: #ff511c;
+    display: flex;
+    margin-left: 10px;
+}
+
+/*=============input=========== */
+
+input {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.signin {
+    background-color: transparent;
+    border: 2px solid black;
+    color: #fff;
+}
+
+.signup {
+    background-color: #ff511c;
+    color: #fff;
+    border: 2px solid black;
+}
+
+/*=====content===== */
+
+.content {
+    display: grid; /* corrected from gride */
+    grid-template-columns: 50% auto;
+    gap: 30px;
+    margin-top: 120px;
+    justify-content: space-between;
+    /* width: 100%; */
+}
+
+/* #content text*/
+/* ========left-side======= */
+
+.content .content-left .info h2 {
+    font-size: 60px;
+    display: block;
+    width: 100%;
+}
+
+.content .content-left .info {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content .content-left .info h2 {
+    font-size: 60px;
+    font-family: sans-serif;
+    margin-bottom: 30px;
+}
+
+.content .content-left .info p {
+    font-size: 23px;
+    line-height: 2pc;
+    margin-bottom: 30px;
+    font-family: sans-serif;
+}
+
+/* #content */
+/* ======button===== */
+
+.content .content-left button {
+    padding: 10px 23px;
+    background-color: orange;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* #content image*/
+/* ======right-side===== */
+
+.content .content-right {
+    display: block;
+    width: 100%;
+}
+
+.content .content-right img {
+    width: 400px;
+    position: relative;
+    user-select: none;
+    animation: rotate 10s linear infinite;
+}
+
+/* #content */
+/* ======animation====== */
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.category {
+    width: 100%;
+    display: flex;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+
+.category .list-items {
+    width: 90%;
+    position: relative;
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: sans-serif;
+    margin-bottom: 70px;
+}
+
+.category .list-items .card-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* corrected from 1fe */
+}
+
+.category .card-list .card {
+    margin-top: 170px;
+    width: 180px; /* reduced size */
+    height: 280px;
+    display: block;
+    padding: 8px; /* reduced padding */
+    border-radius: 8px; /* smaller radius */
+    position: inherit;
+    background-color: #fff;
+    outline: 2px solid black;
+}
+
+.card > img{
+
+    position: absolute;
+    bottom: 280px;
+    margin-left: 30px;
+    object-fit: cover;
+    object-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 20px 20px #faad96;
+    border-radius: 50%;
+
+    width: 120px;
+}
+
+.category .card-list .card .food-title {
+    padding: 20px 0 5px; /* reduced padding */
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px; /* smaller font size */
+}
+
+.category .card-list .card .desc-food p {
+    font-size: 11px; /* smaller font size */
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 15px; /* reduced margin */
+}
+
+.category .card .price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.category .card .price span .plus-icon {
+    color: #ff511c;
+    font-size: 16px; /* smaller icon size */
+    cursor: pointer;
+}
